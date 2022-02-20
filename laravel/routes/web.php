@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 // Изначальный путь для перешедшего на сайт
 Route::get('/', function () {
-    return view('main');
+    return view('pages.main');
 });
 
 // Полный список запросов по теории через метод get
