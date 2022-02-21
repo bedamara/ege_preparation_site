@@ -644,7 +644,7 @@ textarea {
   border: 2px solid #0f468c;
   background-color: #fff;
   border-radius: 1rem;
-  color: #f8efef;
+  color: #0f468c;
 }
 .form__text:focus + .form__description,
 .form__text :focus-visible + .form__description, .form__text--filled + .form__description {
