@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Role;
+use App\Models\PracticeSection;
 use Hash;
 
 use Illuminate\Http\Request;
@@ -21,7 +22,7 @@ class UserController extends Controller
     }
 
     public function signup(Request $request) {
-        $validated = Validator::make($request -> all(), [
+        $request -> validate([
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
             'password' => 'required',
@@ -35,7 +36,7 @@ class UserController extends Controller
         $newUser -> last_login =Carbon::now();
         $newUser -> save();
 
-        return redirect() -> route('user-signin');
+        return redirect() -> route('user-signin-view');
     }
 
     public function signin(Request $request) {
@@ -50,11 +51,12 @@ class UserController extends Controller
             return redirect('/') -> withSucces('Вы успешно вошли');
         }
 
-        return redirect() -> route('user-signin');
+        return redirect() -> route('user-signin-view');
     }
 
     public function signout() {
         Auth::logout();
-        return view('pages.main');
+        
+        return redirect() -> route('index');
     }
 }
