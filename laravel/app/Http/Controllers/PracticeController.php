@@ -13,6 +13,13 @@ class PracticeController extends Controller
         return view('pages.list', ['title' => $title, 'data' => $data, 'name' => $name]);
     }
 
+    public function showTask($name, $id) {
+        $data = PracticeTask::find($id);
+        $title = $data -> title;
+
+        return view('pages.task', ['title' => $title, 'element' => $data, 'name' => $name]);
+    }
+
     public function checkAnswer(Request $request,$name, $id) {
         $request -> validate([
             'answer' => 'required'
@@ -21,9 +28,9 @@ class PracticeController extends Controller
         $data = PracticeTask::find($id);
 
         if ($request -> answer === $data -> answer) {
-            dd('прально');
+            return redirect() -> back() -> with('success', 'Задание решено верно!');
         } else {
-            dd('непрально');
+            return redirect() -> back() -> with('error', 'Задание решено ошибочно =C');
         }
     }
 }

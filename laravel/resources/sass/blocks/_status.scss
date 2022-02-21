@@ -1,0 +1,24 @@
+@use "../utils/variables";
+
+.status {
+    background-color: variables.$white;
+    padding: 2rem;
+    border-radius: 2rem;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+
+    &--good {
+        background-color: variables.$green;
+    }
+
+    &--bad {
+        background-color: variables.$red;
+    }
+}
+
+.status__text {
+    color: variables.$white;
+    font-weight: 600;
+    font-size: 2rem;
+}

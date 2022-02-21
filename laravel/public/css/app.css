@@ -762,3 +762,82 @@ textarea {
 .menu__link:hover {
   color: #d96b2b;
 }
+
+.sections-list {
+  list-style: none;
+}
+
+.sections-list__item {
+  margin-top: 1rem;
+  background-color: #d96b2b;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.sections-list__link {
+  font-size: 1.8rem;
+  color: #f8efef;
+  font-weight: 600;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.sections-list__description {
+  color: #f8efef;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  min-width: 50rem;
+  height: 100%;
+  margin-top: 2rem;
+}
+
+.list__item {
+  background-color: #f8efef;
+  padding: 2rem;
+  border-radius: 2rem;
+}
+
+.task {
+  background-color: #f8efef;
+  padding: 2rem;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.task__description {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #0f468c;
+  margin-bottom: 2rem;
+}
+
+.status {
+  background-color: #f8efef;
+  padding: 2rem;
+  border-radius: 2rem;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+.status--good {
+  background-color: #17a117;
+}
+.status--bad {
+  background-color: #a11717;
+}
+
+.status__text {
+  color: #f8efef;
+  font-weight: 600;
+  font-size: 2rem;
+}

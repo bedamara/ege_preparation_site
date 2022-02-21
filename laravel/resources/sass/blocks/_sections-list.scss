@@ -1,0 +1,27 @@
+@use "../utils/variables";
+
+.sections-list {
+    list-style: none;
+}
+
+.sections-list__item {
+    margin-top: 1rem;
+    background-color: variables.$warm-orange;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.sections-list__link {
+    font-size: 1.8rem;
+    color: variables.$white;
+    font-weight: 600;
+    text-decoration: none;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.sections-list__description {
+    color: variables.$white;
+    font-size: 1.6rem;
+    font-weight: 400;
+}

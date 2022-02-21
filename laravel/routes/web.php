@@ -19,7 +19,7 @@ use App\Http\Controllers\UserController;
 */
 
 // Изначальный путь для перешедшего на сайт
-Route::get('/', [MainController::class, 'index']);
+Route::get('/', [MainController::class, 'index']) -> name('index');
 
 // // Полный список запросов по теории через метод get
 // Route::group(['prefix' => '/theory', 'middleware' => 'auth'], function() {
@@ -43,7 +43,7 @@ Route::get('/', [MainController::class, 'index']);
 Route::group(['prefix' => '/practice'], function() {
     // Route::get('/all', [PracticeController::class, 'showAll']) -> name('practice-all');
     Route::get('/{name}', [PracticeController::class, 'showPart']) -> name('practice-part');
-    // Route::get('/{name}/{id}', [PracticeController::class, 'showTask']) -> name('practice-task');
+    Route::get('/{name}/{id}', [PracticeController::class, 'showTask']) -> name('practice-task');
     // Route::get('/{name}/{id}/edit', [PracticeController::class, 'showEditTask']) -> name('practice-edit-task-view');
     // Route::get('/{name}/edit', [PracticeController::class, 'showEditSection']) -> name('practice-edit-section-view');
 });

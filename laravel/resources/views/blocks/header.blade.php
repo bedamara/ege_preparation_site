@@ -3,7 +3,7 @@
         <div class="header__wrapper">
             @auth
                 <a href="#content" class="visually-hidden">Пропустить до контента</a>
-                <a href="" class="header__level level">
+                <a href="{{ route('index') }}" class="header__level level">
                     <svg valt="" width="60" height="60" class="level__img" viewBox="0 0 1279.000000 1280.000000">
                         <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)" fill="currentColor"
                             stroke="none">
