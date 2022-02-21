@@ -125,6 +125,15 @@
     </li>
     <li class="menu__item menu__item--tall">
         <a href="" class="menu__link">Практика</a>
+
+        <ul class="menu__sections-list sections-list">
+            @foreach ($practiceSections as $practice)
+                <li class="sections-list__item">
+                    <a href="/practice/{{ $practice -> id }}" class="sections-list__link">{{ $practice -> title }}</a>
+                    <p class="sections-list__description">{{ $practice -> description }}</p>
+                </li>
+            @endforeach
+        </ul>        
     </li>
     <li class="menu__item menu__item--tall">
         <a href="" class="menu__link">Программирование</a>

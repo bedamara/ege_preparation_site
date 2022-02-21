@@ -123,9 +123,9 @@
                 </a>
                 <div class="header__user user">
                     <div class="user__text-wrapper">
-                        <a href="" class="user__name">User name</a>
+                        <a href="" class="user__name">{{ Auth::user() -> name }}</a>
                         <a href="" class="user__settings">Настройки</a>
-                        <a href="" class="user__logout">Выйти</a>
+                        <a href="{{ route('user-signout') }}" class="user__logout">Выйти</a>
                     </div>
                     <a href="" class="user__profile">
                         <img src="https://i.pravatar.cc/60" alt="" width="60" height="60" class="user__avatar">
@@ -143,7 +143,7 @@
                 </a>
             </div>
 
-            <a href="/" class="header__logo logo">
+            <a href="{{ route('index') }}" class="header__logo logo">
                 <svg valt="" width="60" height="60" class="logo__img" viewBox="0 0 1279.000000 1280.000000">
                     <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)" fill="currentColor"
                         stroke="none">

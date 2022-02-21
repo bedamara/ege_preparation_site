@@ -5,17 +5,17 @@
 @endsection
 
 @section('content')
-<form action="" class="form">
+<form action="{{ route('user-signin') }}" class="form" method="POST">
     @csrf
     <h1 class="form__heading">Вход</h1>
 
     <label class="form__label">
-        <input type="email" class="form__text">
+        <input type="email" name="email" class="form__text">
         <span class="form__description">Ваша почта</span>
     </label>
     
     <label class="form__label">
-        <input type="password" name="" class="form__text">
+        <input type="password" name="password" class="form__text">
         <span class="form__description">Ваш пароль</span>
     </label>
 
