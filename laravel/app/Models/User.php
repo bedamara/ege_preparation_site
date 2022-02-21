@@ -41,4 +41,28 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function practiceSection() {
+        $this -> hasMany(PracticeSection::class);
+    }
+
+    public function practiceTask() {
+        $this -> hasMany(PracticeTask::class);
+    }
+
+    public function programmingSection() {
+        $this -> hasMany(ProgramingSection::class);
+    }
+
+    public function programmingTask() {
+        $this -> hasMany(ProgrammingTask::class);
+    }
+
+    public function theorySection() {
+        $this -> hasMany(TheorySection::class);
+    }
+
+    public function theoryArticle() {
+        $this -> hasMany(TheoryArticle::class);
+    }
 }

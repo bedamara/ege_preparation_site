@@ -14,12 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('theory_articles', function (Blueprint $table) {
-            $table -> id();
+            $table -> id('id');
             $table -> string('title');
             $table -> text('text');
+            $table -> unsignedBigInteger('section_id');
+            $table -> foreign('section_id') -> references('id') -> on('theory_sections');
             $table -> unsignedBigInteger('creator_id');
-            $table -> index('creator_id', 'creator_id_idx');
-            $table -> foreign('creator_id', 'creator_id_idx') -> references('id') -> on('users');
+            $table -> foreign('creator_id') -> references('id') -> on('users');
             $table -> date('creation_date');
             $table -> timestamps();
         });

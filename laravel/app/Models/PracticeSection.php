@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class PracticeSection extends Model
 {
     use HasFactory;
+
+    public function user() {
+        $this -> belongsTo(User::class);
+    }
 }
