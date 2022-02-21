@@ -83,16 +83,22 @@ Route::get('/', function () {
 //     Route::get('/{username}/level', [UserController::class, 'showLevel']) -> name('user-level');
 // });
 
+//Полный список незащищенных авторизацией путей пользователя через метод get
 Route::group(['prefix' => '/user'], function() {
     Route::get('/signup', [UserController::class, 'showSignup']) -> name('user-signup-view');
     Route::get('/signin', [UserController::class, 'showSignin']) -> name('user-signin-view');
 });
 
-// // полный список запросов по пользователю через метод post
+//Полный список незащищенных авторизацией путей пользователя через метод post
+Route::group(['prefix' => '/user'], function() {
+    Route::post('/signup', [UserController::class, 'signup']) -> name('user-signup');
+    Route::post('/signin', [UserController::class, 'signin']) -> name('user-signin');
+});
+
+// полный список запросов по пользователю через метод post
 // Route::group(['prefix' => '/user', 'middleware' => 'auth'], function() {
-//     Route::post('/signup', [UserController::class, 'signup']) -> name('user-signup');
-//     Route::post('/signin', [UserController::class, 'signin']) -> name('user-signin');
 //     Route::post('/signout', [UserController::class, 'signout']) -> name('user-signout');
 //     Route::post('/{username}/change-password', [UserController::class, 'changePassword']) -> name('user-change-password');
 //     Route::post('/{username}/change-name', [UserController::class, 'changeName']) -> name('user-change-name');
 // });
+

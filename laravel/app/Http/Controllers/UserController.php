@@ -13,6 +13,4 @@ class UserController extends Controller
     public function showSignin() {
         return view('pages.signin');
     }
-
-    
 }
