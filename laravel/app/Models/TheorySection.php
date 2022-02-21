@@ -12,4 +12,8 @@ class TheorySection extends Model
     public function user() {
         $this -> belongsTo(User::class);
     }
+
+    public function article() {
+        $this -> hasMany(TheoryArticle::class);
+    }
 }

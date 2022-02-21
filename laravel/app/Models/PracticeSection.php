@@ -12,4 +12,8 @@ class PracticeSection extends Model
     public function user() {
         $this -> belongsTo(User::class);
     }
+
+    public function task() {
+        $this -> hasMany(PracticeTask::class);
+    }
 }
