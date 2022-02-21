@@ -1,8 +1,0 @@
-@use "../utils/mixins";
-
-.header__wrapper {
-    @include mixins.wrapper;
-
-    display: flex;
-    justify-content: space-between;
-}

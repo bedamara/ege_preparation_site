@@ -1,8 +1,14 @@
+@use "utils/variables";
+@use "utils/mixins";
 @use "utils/font";
 @use "utils/normalize";
-@use "utils/visually-hiiden";
+@use "utils/visually-hidden";
 @use "utils/general";
 
-@use "blocks/header.scss";
-@use "blocks/level.scss";
-@use "blocks/user.scss";
+@use "blocks/header";
+@use "blocks/level";
+@use "blocks/user";
+@use "blocks/logo";
+@use "blocks/tips";
+@use "blocks/main";
+@use "blocks/form";

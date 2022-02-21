@@ -1,3 +1,5 @@
+@use "variables";
+
 *,
 *::before,
 *::after {
@@ -14,5 +16,13 @@ body {
     font-family: "Blogger Sans", "Arial", sans-serif;
     min-width: 100%;
     font-size: 1.6rem;
-    background-color: #edeff6;
+    background-color: rgba(variables.$light-blue, 0.8);
+}
+
+input, 
+button, 
+optgroup, 
+select, 
+textarea {
+    font-size: inherit;
 }

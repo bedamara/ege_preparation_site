@@ -1,0 +1,109 @@
+@use "../utils/variables";
+
+.form {
+    min-width: 50rem;
+    padding: 2rem;
+    padding-bottom: 3rem;
+
+    background-color: variables.$white;
+    border-radius: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form__heading {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+}
+
+.form__label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    max-width: 30rem;
+    width: 100%;
+    margin-bottom: 4rem;
+}
+
+.form__description {
+    position: absolute;
+    margin-left: 1rem;
+    margin-top: auto;
+    margin-bottom: auto;
+    transition: transform 0.3s, color 0.5s;
+
+    font-size: 2rem;
+    font-weight: 500;
+    color: variables.$dark-blue;
+}
+
+.form__text {
+    outline: none;
+    padding: 1rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    width: 100%;
+    border: 2px solid variables.$dark-blue;
+    background-color: #fff;
+
+    border-radius: 1rem;
+    color: variables.$white;
+
+    &:focus,
+    :focus-visible,
+    &--filled {
+        &+.form__description {
+            transform: translate(0, -3.5rem);
+        }
+    }
+}
+
+.form__buttons-wrapper {
+    display: flex;
+    max-width: 30rem;
+    width: 100%;
+    justify-content: center;
+}
+
+.form__button {
+    border: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+
+    padding: 10px;
+    background-color: variables.$green;
+    min-width: 40%;
+    color: variables.$white;
+    border-radius: 1rem;
+    font-size: 2rem;
+    transition: background-color 0.3s;
+
+    &:not(:first-child) {
+        margin-left: 2rem;
+    }
+
+    &:hover,
+    :focus,
+    :focus-visible {
+        background-color: rgba(variables.$green, 0.7);
+    }
+
+    &--reset {
+        background-color: variables.$red;
+        
+        &:hover,
+        :focus,
+        :focus-visible {
+            background-color: rgba(variables.$red, 0.7);
+        }
+    }
+}

@@ -1,0 +1,27 @@
+@use "../utils/mixins";
+@use "../utils/variables";
+
+.header {
+    background-color: variables.$dark-blue;
+    
+}
+
+.header__wrapper {
+    @include mixins.wrapper;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    min-height: 8rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    position: relative;
+}
+
+.header__logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

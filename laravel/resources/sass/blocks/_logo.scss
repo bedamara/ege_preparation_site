@@ -1,0 +1,21 @@
+@use "../utils/variables";
+
+.logo {
+    color: variables.$light-blue;
+    text-decoration: none;
+
+    &:hover {
+        .logo__img {
+            background-color: variables.$dark-blue;
+            color: variables.$white;
+        }
+    }
+}
+
+.logo__img {
+    background-color: variables.$white;
+    border-radius: 50%;
+    border: none;
+    color: variables.$light-blue;
+    transition: color 0.5s, background-color 0.5s;
+}

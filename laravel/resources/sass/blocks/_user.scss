@@ -1,0 +1,87 @@
+@use "../utils/variables";
+
+.user {
+    display: flex;
+    align-items: center;
+
+    &--guest {
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+    }
+}
+
+.user__profile {
+    text-decoration: none;
+}
+
+.user__avatar {
+    border-radius: 50%;
+    display: block;
+    transition: opacity 0.3s;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+.user__text-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+
+    margin-right: 0.5rem;
+}
+
+.user__name,
+.user__settings,
+.user__logout,
+.user__signup,
+.user__signin {
+    color: variables.$white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.user__name {
+    flex-basis: 100%;
+    text-align: right;
+    
+    font-weight: 600;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+
+    &:hover {
+        color: variables.$warm-orange;
+    }
+}
+
+.user__settings {
+    font-weight: 400;
+    font-size: 1.8rem;
+    margin-right: 1rem;
+
+    &:hover {
+        color: variables.$warm-orange;
+    }
+}
+
+.user__logout {
+    font-weight: 400;
+    font-size: 1.8rem;
+
+    &:hover {
+        color: variables.$red;
+    }
+}
+
+.user__signup,
+.user__signin {
+    font-weight: 400;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+
+    &:hover {
+        color: variables.$warm-orange;
+    }
+}

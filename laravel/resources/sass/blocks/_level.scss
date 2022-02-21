@@ -1,0 +1,45 @@
+@use "../utils/variables";
+
+.level {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    &:hover {
+        .level__img {
+            color: variables.$warm-orange;
+        }
+
+        .level__status {
+            color: variables.$warm-orange
+        }
+    }
+}
+
+.level__img {
+    background-color: variables.$white;
+    border-radius: 50%;
+    border: none;
+    color: variables.$light-blue;
+    transition: color 0.3s;
+}
+
+.level__text {
+    display: flex;
+    flex-direction: column;
+    
+    margin-left: 0.5rem;
+
+    color: variables.$white;
+}
+
+.level__description {
+    font-weight: 400;
+    font-size: 1.8rem;
+}
+
+.level__status {
+    font-weight: 600;
+    font-size: 2rem;
+    transition: color 0.3s;
+}
