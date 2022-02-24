@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="task">
-        <p class="task__description">{{ $element -> text }}</p>
+        <p class="task__description">{!! $element -> text !!}</p>
         <form action="/practice/{{ $name }}/{{ $element -> id }}/done" class="task__form form" method="post">
             @csrf
             <label class="form__label">

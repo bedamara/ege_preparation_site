@@ -33,7 +33,7 @@ class UserController extends Controller
         $newUser -> name = $request -> input('name');
         $newUser -> email = $request -> input('email');
         $newUser -> password = Hash::make($request -> input('password'));
-        $newUser -> last_login =Carbon::now();
+        $newUser -> last_login = Carbon::now();
         $newUser -> save();
 
         return redirect() -> route('user-signin-view');
