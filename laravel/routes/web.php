@@ -41,7 +41,13 @@ Route::get('/', [MainController::class, 'index']) -> name('index');
 //     Route::post('/{name}/edit', [TheoryController::class, 'editSection']) -> name('theory-edit-section');
 // });
 
-// Полный список запросо по практике через метод get
+Route::group(['prefix' => '/practice', 'middleware' => 'auth'], function() {
+    Route::get('/{name}/add', [PracticeController::class, 'showAddTask']) -> name('practice-add-task-vue');
+    Route::get('/{name}/{id}/edit', [PracticeController::class, 'showEditTask']) -> name('practice-edit-task-vue');
+    Route::get('/add', [PracticeController::class, 'showAddSection']) -> name('practice-add-section-vue');
+    Route::get('/{name}/edit', [PracticeController::class, 'showEditSection']) -> name('practice-edit-section-vue');
+});
+
 Route::group(['prefix' => '/practice'], function() {
     // Route::get('/all', [PracticeController::class, 'showAll']) -> name('practice-all');
     Route::get('/{name}', [PracticeController::class, 'showPart']) -> name('practice-part');
@@ -55,12 +61,7 @@ Route::group(['prefix' => '/practice'], function() {
     Route::post('/{name}/{id}/done', [PracticeController::class, 'checkAnswer']) -> name('practice-done');
 });
 
-Route::group(['prefix' => '/practice', 'middleware' => 'auth'], function() {
-    Route::get('/{name}/add', [PracticeController::class, 'showAddTask']) -> name('practice-add-task-vue');
-    Route::get('/{name}/{id}/edit', [PracticeController::class, 'showEditTask']) -> name('practice-edit-task-vue');
-    Route::get('/add', [PracticeController::class, 'showAddSection']) -> name('practice-add-section-vue');
-    Route::get('/{name}/edit', [PracticeController::class, 'showEditSection']) -> name('practice-edit-section-vue');
-});
+
 
 Route::group(['prefix' => '/practice', 'middleware' => 'auth'], function() {
     Route::post('/{name}/add', [PracticeController::class, 'addTask']) -> name('practice-add-task');

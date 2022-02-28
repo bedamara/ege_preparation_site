@@ -20,7 +20,7 @@ return new class extends Migration
             $table -> text('answer');
             $table -> unsignedBigInteger('section_id');
             $table -> foreign('section_id') -> references('id') -> on('practice_sections');
-            $table -> unsignedBigInteger('creator_id');
+            $table -> unsignedBigInteger('creator_id') -> default(1);
             $table -> foreign('creator_id') -> references('id') -> on('users');
             $table -> date('creation_date');
             $table -> timestamps();

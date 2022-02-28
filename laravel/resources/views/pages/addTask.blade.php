@@ -5,22 +5,22 @@
 @endsection
 
 @section('content')
-<form action="{{ route('user-signin') }}" class="form" method="POST">
+<form action="{{ route('practice-add-task', ['name' => $name]) }}" class="form" method="POST">
     @csrf
     <h1 class="form__heading">Добавление нового вопроса</h1>
 
     <label class="form__label">
-        <input type="text" name="title" class="form__text" value="{{ $name }}">
+        <input type="text" name="title" class="form__text" value="{{ ($title) ? ($title) : ("") }}">
         <span class="form__description">Название</span>
     </label>
 
     <label class="form__label">
-        <textarea name="text" cols="30" rows="10" class="form__text">{{ $text }}</textarea>
+        <textarea name="text" cols="30" rows="10" class="form__text">{{ ($text) ? ($text) : ("") }}</textarea>
         <span class="form__description">Вопрос</span>
     </label>
     
     <label class="form__label">
-        <input type="text" name="answer" class="form__text" value="{{ $answer }}">
+        <input type="text" name="answer" class="form__text" value="{{ ($answer) ? $answer : ("") }}">
         <span class="form__description">Ответ</span>
     </label>
 

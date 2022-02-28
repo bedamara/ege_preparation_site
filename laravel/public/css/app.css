@@ -635,9 +635,7 @@ textarea {
 
 .form__label {
   display: flex;
-  flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
   position: relative;
   max-width: 30rem;
   width: 100%;
@@ -649,6 +647,7 @@ textarea {
   margin-left: 1rem;
   margin-top: auto;
   margin-bottom: auto;
+  transform: translateY(1rem);
   transition: transform 0.3s, color 0.5s;
   font-size: 2rem;
   font-weight: 500;
@@ -668,7 +667,7 @@ textarea {
 }
 .form__text:focus + .form__description,
 .form__text :focus-visible + .form__description, .form__text--filled + .form__description {
-  transform: translate(0, -3.5rem);
+  transform: translate(0, -2rem);
 }
 
 .form__buttons-wrapper {

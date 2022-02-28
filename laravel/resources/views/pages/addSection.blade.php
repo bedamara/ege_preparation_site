@@ -10,12 +10,12 @@
     <h1 class="form__heading">Добавление новой секции</h1>
 
     <label class="form__label">
-        <input type="text" name="title" class="form__text" value="{{ $name }}">
+        <input type="text" name="title" class="form__text" value="{{ ($name) ? ($name) : ("")}}">
         <span class="form__description">Название</span>
     </label>
 
     <label class="form__label">
-        <textarea name="description" cols="30" rows="10" class="form__text">{{ $text }}</textarea>
+        <textarea name="description" cols="30" rows="10" class="form__text">{{ ($text) ? $text : ("")}}</textarea>
         <span class="form__description">Описание</span>
     </label>
 

@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
 use App\Models\PracticeTask;
 use App\Models\PracticeSection;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\Request;
 
 class PracticeController extends Controller
 {
@@ -29,15 +30,17 @@ class PracticeController extends Controller
         return view('pages.task', ['title' => $title, 'element' => $data, 'name' => $name, 'admin' => false]);
     }
 
-    public function showAddTask($name, $id) {
+    public function showAddTask($name) {
         if (Auth::check()) {
             $user_id = Auth::user() -> id;
             $user_role = User::find($user_id) -> user_role_id;
 
             if ($user_role === 1) {
-                return view('pages.addTask', []);
+                return view('pages.addTask', ['title' => '', 'text' => '', 'answer' => '', 'name' => $name]);
             }
         }
+
+        return redirect() -> route('index');
     }
 
     public function showEditTask($name, $id) {
@@ -77,6 +80,24 @@ class PracticeController extends Controller
                 return view('pages.addSection', []);
             }
         }
+    }
+
+    public function addTask(Request $request, $name) {
+        $request -> validate([
+            'title' => 'required',
+            'text' => 'required',
+            'answer' => 'required'
+        ]);
+
+        $newQuestion = new PracticeTask();
+        $newQuestion -> title = $request -> input('title');
+        $newQuestion -> text = $request -> input('text');
+        $newQuestion -> answer = $request -> input('answer');
+        $newQuestion -> section_id = intval($name);
+        $newQuestion -> creation_date = Carbon::now();
+        $newQuestion -> save();
+
+        return redirect() -> route('practice-part', ['name' => $name]);
     }
 
     public function checkAnswer(Request $request,$name, $id) {
