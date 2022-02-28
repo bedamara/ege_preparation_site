@@ -13,6 +13,10 @@
     background-color: variables.$white;
     padding: 2rem;
     border-radius: 2rem;
+
+    &:not(:first-child) {
+        margin-top: 1rem;
+    }
 }
 
 .list__link {

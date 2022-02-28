@@ -1,11 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\TheoryController;
 use App\Http\Controllers\PracticeController;
 use App\Http\Controllers\ProgrammingController;
 use App\Http\Controllers\UserController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -32,7 +34,7 @@ Route::get('/', [MainController::class, 'index']) -> name('index');
 
 // // Полный список запросов по теории через метод post
 // Route::group(['prefix' => '/theory', 'middleware' => 'auth'], function() {
-//     Route::post('/{name}/{id}/done', [TheoryController::class, 'setDone']) -> name('theory-done');
+//     // Route::post('/{name}/{id}/done', [TheoryController::class, 'setDone']) -> name('theory-done');
 //     Route::post('/{name}/add', [TheoryController::class, 'addArticle']) -> name('theory-add-article');
 //     Route::post('/{name}/{id}/edit', [TheoryController::class, 'editArticle']) -> name('theory-edit-article');
 //     Route::post('/add', [TheoryController::class, 'addSection']) -> name('theory-add-section');
@@ -51,10 +53,20 @@ Route::group(['prefix' => '/practice'], function() {
 // Полный список запросо по практике через метод post
 Route::group(['prefix' => '/practice'], function() {
     Route::post('/{name}/{id}/done', [PracticeController::class, 'checkAnswer']) -> name('practice-done');
-//     Route::post('/{name}/add', [PracticeController::class, 'addTask']) -> name('practice-add-task');
-//     Route::post('/{name}/{id}/edit', [PracticeController::class, 'editTask']) -> name('practice-edit-task');
-//     Route::post('/add', [PracticeController::class, 'addSection']) -> name('practice-add-section');
-//     Route::post('/{name}/edit', [PracticeController::class, 'editSection']) -> name('practice-edit-section');
+});
+
+Route::group(['prefix' => '/practice', 'middleware' => 'auth'], function() {
+    Route::get('/{name}/add', [PracticeController::class, 'showAddTask']) -> name('practice-add-task-vue');
+    Route::get('/{name}/{id}/edit', [PracticeController::class, 'showEditTask']) -> name('practice-edit-task-vue');
+    Route::get('/add', [PracticeController::class, 'showAddSection']) -> name('practice-add-section-vue');
+    Route::get('/{name}/edit', [PracticeController::class, 'showEditSection']) -> name('practice-edit-section-vue');
+});
+
+Route::group(['prefix' => '/practice', 'middleware' => 'auth'], function() {
+    Route::post('/{name}/add', [PracticeController::class, 'addTask']) -> name('practice-add-task');
+    Route::post('/{name}/{id}/edit', [PracticeController::class, 'editTask']) -> name('practice-edit-task');
+    Route::post('/add', [PracticeController::class, 'addSection']) -> name('practice-add-section');
+    Route::post('/{name}/edit', [PracticeController::class, 'editSection']) -> name('practice-edit-section');
 });
 
 // // полный список запросов по программированию через метод get

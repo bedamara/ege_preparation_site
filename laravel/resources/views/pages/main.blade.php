@@ -8,7 +8,7 @@
 <ul class="menu">
     <li class="menu__item menu__item--small">
         <a href="/" class="menu__logo logo logo--big">
-            <svg valt="котять" width="60" height="60" class="logo__img" viewBox="0 0 1279.000000 1280.000000">
+            <svg alt="котять" width="60" height="60" class="logo__img" viewBox="0 0 1279.000000 1280.000000">
                 <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)" fill="currentColor"
                     stroke="none">
                     <path d="M8855 12788 c-27 -5 -96 -18 -153 -29 -366 -69 -757 -290 -1202 -680
@@ -133,6 +133,11 @@
                     <p class="sections-list__description">{{ $practice -> description }}</p>
                 </li>
             @endforeach
+            @if ($admin)
+                <li class="sections-list__item">
+                    <a href="/practice/add" class="sections-list__link">Добавить секцию</a>
+                </li>
+            @endif
         </ul>        
     </li>
     <li class="menu__item menu__item--tall">

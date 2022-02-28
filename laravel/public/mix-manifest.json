@@ -1,5 +1,6 @@
 {
     "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css",
     "/fonts/bloggersans-bold.woff": "/fonts/bloggersans-bold.woff",
     "/fonts/bloggersans-bold.woff2": "/fonts/bloggersans-bold.woff2",
     "/fonts/bloggersans-bolditalic.woff": "/fonts/bloggersans-bolditalic.woff",
@@ -15,6 +16,5 @@
     "/fonts/bloggersans-mediumitalic.woff": "/fonts/bloggersans-mediumitalic.woff",
     "/fonts/bloggersans-mediumitalic.woff2": "/fonts/bloggersans-mediumitalic.woff2",
     "/fonts/bloggersans.woff": "/fonts/bloggersans.woff",
-    "/fonts/bloggersans.woff2": "/fonts/bloggersans.woff2",
-    "/css/app.css": "/css/app.css"
+    "/fonts/bloggersans.woff2": "/fonts/bloggersans.woff2"
 }
